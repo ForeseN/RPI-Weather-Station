@@ -16,7 +16,7 @@ def messageFunction(client, userdata, message):
 
 ourClient = mqtt.Client("makerio_mqtt")  # Create a MQTT client object
 
-ourClient.connect("10.100.102.17", 1884)  # Connect to the test MQTT broker
+ourClient.connect("MY_IP", 1883)  # Connect to the test MQTT broker
 
 ourClient.subscribe("req")  # Subscribe to the topic AC_unit
 

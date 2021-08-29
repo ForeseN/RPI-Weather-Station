@@ -27,12 +27,12 @@ temp_livingr_sensor = 'HOLDER'
 sensor = W1ThermSensor()
 app = Flask(__name__)
 # use the free broker from HIVEMQ
-app.config['MQTT_BROKER_URL'] = '10.100.102.17'
-app.config['MQTT_BROKER_PORT'] = 1884  # default port for non-tls connection
+app.config['MQTT_BROKER_URL'] = 'YOUR IP'
+app.config['MQTT_BROKER_PORT'] = 1883  # default port for non-tls connection
 # set the username here if you need authentication for the broker
-app.config['MQTT_USERNAME'] = 'yaron'
+app.config['MQTT_USERNAME'] = 'MQTT-USERNAME'
 # set the password here if the broker demands authentication
-app.config['MQTT_PASSWORD'] = 'yaron123'
+app.config['MQTT_PASSWORD'] = 'MQTT-PASSWORD'
 # set the time interval for sending a ping to the broker to 5 seconds
 app.config['MQTT_KEEPALIVE'] = 5
 # set TLS to disabled for testing purposes
@@ -142,26 +142,25 @@ def index():
     last_time = rooms_arr[0][-1].time/1000
     current_time = int(time.time())
     next_refresh = 15*60-(current_time - last_time) + random.randint(1, 10)
-    try:
-        response = requests.get('http://10.100.102.50/')
-        html = response.text
-        soup = BeautifulSoup(html, 'html.parser')
-        all_temp = soup.find_all('span')
-        global_temp = all_temp[0].text
-        global_temp_c = global_temp[24:29]
-        inside_temp = all_temp[1].text
-        inside_temp_c = inside_temp[24:29]
-        top_temp = all_temp[2].text
-        top_temp_c = top_temp[21:26]
-    except:
-        pass
+    # try:
+    #     response = requests.get('http://10.100.102.50/')
+    #     html = response.text
+    #     soup = BeautifulSoup(html, 'html.parser')
+    #     all_temp = soup.find_all('span')
+    #     global_temp = all_temp[0].text
+    #     global_temp_c = global_temp[24:29]
+    #     inside_temp = all_temp[1].text
+    #     inside_temp_c = inside_temp[24:29]
+    #     top_temp = all_temp[2].text
+    #     top_temp_c = top_temp[21:26]
+    # except:
+    #     pass
     weather_info = get_weather_info()
     return render_template('newIndex.html', refresh_interval=next_refresh, temp_yaron=rooms_arr[YARON_ROOM][-1].temp,
                            temp_livingr=rooms_arr[LIVING_ROOM][-1].temp, temp_guy=rooms_arr[GUY_ROOM][-1].temp, yaron_chart=(
                                chart_readys[YARON_ROOM]),
                            livingr_chart=(chart_readys[LIVING_ROOM]), guy_chart=(
-                               chart_readys[GUY_ROOM]), GLOBAL_TEMP=global_temp_c,
-                           INSIDE_TEMP=inside_temp_c, TOP_TEMP=top_temp_c, outside_temp=weather_info[
+                               chart_readys[GUY_ROOM]), outside_temp=weather_info[
                                0], outside_feels_like=weather_info[1],
                            outside_descirption=weather_info[2], outside_humidity=weather_info[
                                3], outside_wind_speed=weather_info[4],
@@ -170,4 +169,3 @@ def index():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000', debug=False)
-    print('helloDear')
