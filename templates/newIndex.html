@@ -1,0 +1,606 @@
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script>
+        const _HISTORY_ =
+            "B876E960453041B277E960412E40AB78E960402C3EA479E960412B3C9E7AE960432C42977BE960422D3F907CE960432D3F897DE960432D40837EE960452D427C7FE960432E407580E960422E3E6E81E960442E416882E960442E3F6183E960422E3E5A84E960432F405385E960432F3F4D86E960422E3E4687E960422F3E3F88E960422F3F3889E960432F3F328AE960422F3D2B8BE960412F3D248CE960402F3D1D8DE96042303D178EE96041303E108FE96042303D0990E96041303B0391E9603F303CFC91E9603E303BF592E9603D303AEE93E9603D313BE794E9603D313AE195E9603C313A1397E9603B31393B99E9603B3139D59BE9603B3138969CE9603B31378F9DE9603A3138889EE960393237829FE9603931377BA0E960393238ADA1E960383237D5A3E96038323837A6E96036323898A8E960363238F9AAE9603532385AADE960343138BCAFE9603531381EB2E9603531387FB4E960343138E0B6E96033313742B9E960323137A3BBE96031313804BEE96030313765C0E960303037C6C2E9602F303728C5E9602F303789C7E960303037EAC9E9602F30374BCCE9602E3037ADCEE9602E30360ED1E9602E30366FD3E9602D3037D0D5E9602D30361ABDE7601F34397BBFE7601F3439DDC1E7601F34393EC4E7601F34399FC6E7601D343900C9E7602F333962CBE760233239C3CDE76026323924D0E76029323985D2E7602E3239E7D4E76032323948D7E760343239A9D9E7603631390ADCE760383139A5DEE7603B313966DFE7603A31395FE0E7603D313B58E1E76039313952E2E7603E323B4BE3E7603C323A44E4E7603C323A3DE5E7603B323A6FE6E76039323898E8E76039323832EBE7603B3238F2EBE7603A3338ECECE7603E333CE5EDE760373337DEEEE7603E333BD7EFE7603F343CD1F0E7603A343A02F2E7603834372BF4E7603D3538C5F6E76044343886F7E76042353E7FF8E76040353D78F9E7603C353B71FAE7603F353C6BFBE76045354164FCE7603F353E5DFDE7603C363A56FEE76045364250FFE7604536444900E8603E373C4201E8604637433C02E8604236403503E8603F353E2E04E86041353E2705E8604734422106E8604234421A07E8603F353D1308E8604935440C09E860473546060AE86040353FFF0AE860493645F80BE860453643F10CE860423741EB0DE860443741E40EE8604A3844DD0FE860443843D610E86041393FD011E8604A3944C912E860493A48C213E860423A40BB14E8604A3A45B515E8604A3A47AF16E860433B41A817E860473B44A118E8604B3B459B19E860453B44941AE860423C418D1BE8604A3C44861CE860473C46801DE860433D41791EE860493D44721FE8604B3D486B20E860443E436521E860493E455E22E8604A3E455723E860473E465024E860483F454A25E8604A3F434326E8604B3F473C27E8604A3F443528E8604C3F482F29E860473F45282AE860493F43212BE8604A40461B2CE8604A4043142DE8604A40460D2EE860494043062FE8604940450030E860474044F930E860494044F231E860474044EB32E860484043E533E860474044DE34E860474042D735E860474043D036E860464043CA37E860473F43C338E860453E43BC39E860463D42B53AE860453D43AF3BE860463D41A83CE860443D42A13DE860443D419A3EE860433C40943FE860453C418D40E860443C408641E860423C3F7F42E860443C417943E860443B407244E860423B406B45E860403B406446E860413B3F5E47E860403B3F9048E8603F3A3FB84AE8603E3A3E1A4DE8603D393E7C4FE8603C393EDD51E8603B393E3E54E86039393D9F56E8603A393E0159E86039393D625BE86038393DC35DE86037383D2460E86036383D8662E86035383DE764E86034383D4867E86033383DA969E86032383D0B6CE86031383D6C6EE86031383DCD70E86030383D2F73E86030373C9075E8602F373DF177E8602F373D527AE8602E373CB37CE8602E373C157FE8602D373D7681E8602D373CD783E8602D373C3986E8602C373C9A88E8602C373CFB8AE8602B373C5C8DE8602B373CBD8FE8602B373C1F92E8602A373B8094E8602A373CE296E86029373B4399E86029373BA59BE86028373B069EE86026363B67A0E86024363CC8A2E86022363B2AA5E86022363B8BA7E86023333BECA9E860232E3A4DACE860232A3AAFAEE86022293910B1E86023293971B3E860232239D2B5E860231F3734B8E860231F3695BAE860232036F6BCE86023203658BFE860232036BAC1E8602320351BC4E8602320357CC6E860232035DDC8E8602320353FCBE860232135A0CDE86023213501D0E86023213562D2E860222135C3D4E86021213525D7E86020213586D9E8601F2135E7DBE8601F213448DEE8601F2134AAE0E8601E21340BE3E8601E21346CE5E8601E2234CDE7E8601E22342FEAE8601E223491ECE8601E2233F2EEE8601E223353F1E8601E2233B4F3E8601E223316F6E8601E223377F8E8601E2233D8FAE8601E223339FDE8601E22339BFFE8601E2233FC01E9601E22325D04E9601E2232BE06E9601E22322009E9601E2232810BE9601E2232E20DE9601E23324310E9601E2332A512E9601E23320615E9601E23326717E9601A2332C819E9602123322A1CE9602223318B1EE960232231EC20E9602422314E23E960252231B025E9602822311128E9602D2231722AE9603122310C2DE960352231CD2DE960342231C62EE960362334BF2FE960352333B830E960362434B131E960352433AB32E960372435A433E9603325329D34E9603825359635E9603926379036E9603926368937E9603426348238E9603227317C39E960372735753AE9603927366E3BE960342834673CE960332833613DE9603928365A3EE9603B2939533FE9603629364C40E9603B2A394641E9603D2A397742E960372B38A044E960372B333A47E9603B2B32FB47E9603A2B39F448E960372C36ED49E9603B2C38E64AE9603F2C3CE04BE960382D37D94CE9603F2D3CD24DE9603F2E3BCB4EE9603A2E39C54FE960382F37BE50E9603C2F3BB751E9603A3039B052E96040303CAA53E96040303CA354E9603A313A9C55E9603F313C9556E9603F323D8F57E9603D323C8858E9603B333A8159E9604533417B5AE960453343755BE9603E343D6E5CE960433440675DE96042353F615EE9603D353B5A5FE96040353D5360E96045363F4C61E9604636444662E96041363F3F63E96042363E3864E96041363E3165E9604637402B66E9604337422467E9603E373D1D68E9604738421669E960473844106AE9603F383E096BE960473843026CE960443742FB6CE960413740F56DE9603F373EEE6EE960453840E76FE960453444E070E960402E3FDA71E960452D41D372E960462D41CC73E960422F41C574E960402F3FBF75E96045303F";
+        const _VALVEOPENINGS_ = [
+            1625808493000, 1625811705000, 1625814668000, 1625894099000,
+            1625900801000, 1625922461000,
+        ];
+        const _VALVECLOSINGS_ = [
+            1625810487000, 1625813450000, 1625835607000, 1625899583000,
+            1625921242000, 1625923956000,
+        ];
+        const TIMESTAMP_SIZE = 4;
+        const SENSOR_COUNT = 3;
+    </script>
+    <!-- <meta http-equiv="refresh" content="226; URL=http://10.100.102.50/" /> -->
+    <script>
+        const LINE_SIZE = TIMESTAMP_SIZE + SENSOR_COUNT;
+
+        function hexStringToByte(e) {
+            if (!e) {
+                return new Uint8Array();
+            }
+            var c = [];
+            for (var d = 0, b = e.length; d < b; d += 2) {
+                c.push(parseInt(e.substr(d, 2), 16));
+            }
+            return new Uint8Array(c);
+        }
+        const historyBytes = hexStringToByte(_HISTORY_);
+        const POINTS_COUNT = historyBytes.length / LINE_SIZE;
+
+        function parseTime(a) {
+            let time = 0;
+            for (let i = 0, mult = 1; i < TIMESTAMP_SIZE; i++, mult *= 256) {
+                time += historyBytes[a + i] * mult;
+            }
+            return time;
+        }
+
+        function parseTemps(a) {
+            let temps = [];
+            for (let i = 0; i < SENSOR_COUNT; i++) {
+                temps.push(historyBytes[a + TIMESTAMP_SIZE + i]);
+            }
+            return temps;
+        }
+        let historyClean = [];
+        for (let i = 0; i < POINTS_COUNT; i++) {
+            const line_start = i * LINE_SIZE;
+            const time = parseTime(line_start);
+            const temps = parseTemps(line_start);
+            if (time == 0) {
+                continue;
+            }
+            let bad = false;
+            for (let j = 0; j < temps.length; j++) {
+                if (temps[j] == 157) {
+                    bad = true;
+                    break;
+                }
+            }
+            if (bad) {
+                continue;
+            }
+            let point = {
+                time: time * 1000,
+                temps: temps
+            };
+            historyClean.push(point);
+        }
+
+        function comparePoints(d, c) {
+            if (d.time < c.time) {
+                return -1;
+            }
+            return d.time > c.time ? 1 : 0;
+        }
+        historyClean.sort(comparePoints);
+        var GLOBAL_DATA = [];
+        var INSIDE_DATA = [];
+        var TOP_DATA = [];
+        for (let i = 0; i < historyClean.length; i++) {
+            GLOBAL_DATA.push({
+                x: historyClean[i].time,
+                y: historyClean[i].temps[0],
+            });
+            INSIDE_DATA.push({
+                x: historyClean[i].time,
+                y: historyClean[i].temps[1],
+            });
+            TOP_DATA.push({
+                x: historyClean[i].time,
+                y: historyClean[i].temps[2],
+            });
+        }
+        const annotationsOpen = _VALVEOPENINGS_.map(function (b, a) {
+            return {
+                type: "line",
+                mode: "vertical",
+                scaleID: "x-axis-0",
+                value: b,
+                borderColor: "red",
+                label: {
+                    content: "Opened",
+                    enabled: true,
+                    position: "top"
+                },
+            };
+        });
+        const annotationsClose = _VALVECLOSINGS_.map(function (b, a) {
+            return {
+                type: "line",
+                mode: "vertical",
+                scaleID: "x-axis-0",
+                value: b,
+                borderColor: "blue",
+                label: {
+                    content: "Closed",
+                    enabled: true,
+                    position: "top"
+                },
+            };
+        });
+        const annotations = annotationsOpen.concat(annotationsClose);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js"
+        integrity="sha512-SuxO9djzjML6b9w9/I07IWnLnQhgyYVSpHZx0JV97kGBfTIsUYlWflyuW4ypnvhBrslz1yJ3R+S14fdCWmSmSA=="
+        crossorigin="anonymous"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"
+        integrity="sha256-Olnajf3o9kfkFGloISwP1TslJiWUDd7IYmfC+GdCKd4=" crossorigin="anonymous"></script>
+    <link rel="icon"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAS0lEQVR42s2SMQ4AIAjE+P+ncSYdasgNXMJgcyIIlVKPIKdvioAXyWBeJmVpqRZKWtj9QWAKZyWll50b8IcL9JUeQF50n28ckyb0ADG8RLwp05YBAAAAAElFTkSuQmCC"
+        type="image/x-png" />
+    <script src="https://kit.fontawesome.com/1580936abd.js" crossorigin="anonymous"></script>
+
+    <style>
+        .tempertaure-rooms {
+            font-size: 1.0rem;
+        }
+    </style>
+    <link href="static/dashboard.css" rel="stylesheet">
+
+</head>
+
+<body onload='do_the_work()'>
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Weather Station</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-nav">
+            <div class="nav-item text-nowrap">
+                <a class="nav-link px-3" href="#">Sign out</a>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column" id='pills-tab' role='tablist'>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="pills-home-tab" data-bs-target="#home-temperature"
+                                type="button" role="tab" aria-controls="pills-home-temperature" aria-selected="false"
+                                data-bs-toggle="pill">
+                                <span data-feather="home"></span>
+                                <i class="fas fa-home"></i>
+                                Home Temperature
+                            </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-bs-target="#outside-temperature" id="pills-outside-tab"
+                                type="button" role="tab" aria-controls="pills-profile" aria-selected="false"
+                                data-bs-toggle="pill">
+                                <span data-feather="outside"></span>
+                                <!-- <i class="fas fa-hiking"></i> -->
+                                <i class="fas fa-walking"></i>
+                                &nbsp;Outside Temperature
+                            </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-bs-target="#boiler-temperature" id="pills-boiler-tab" type="button"
+                                role="tab" aria-controls="pills-contact" aria-selected="false" data-bs-toggle="pill">
+                                <span data-feather="boiler"></span>
+                                <!-- <i class="fas fa-hand-holding-water"></i> -->
+                                <i class="fas fa-shower"></i>
+                                Boiler Temperature
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <!--  ---------------------------------------------------- HOME ------------------------------------------------ -->
+                <div class="tabcontent" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="home-temperature" role="tabpanel"
+                        aria-labelledby="pills-home-temperature-tab">
+
+                        <div class='graph'>
+                            <canvas class="my-4 w-100" id="home-temperatures-graph" width="900" height="260"></canvas>
+
+                            <script>
+                                var ctx_temps = document
+                                    .getElementById("home-temperatures-graph")
+                                    .getContext("2d");
+                                var scatterChart1 = new Chart(ctx_temps, {
+                                    type: "line",
+                                    data: {
+                                        datasets: [{
+                                                label: "Living Room",
+                                                data: [{
+                                                    {
+                                                        livingr_chart
+                                                    }
+                                                }],
+                                                borderColor: "Teal",
+                                                fill: false,
+                                            },
+                                            {
+                                                label: "Yaron",
+                                                data: [{
+                                                    {
+                                                        yaron_chart
+                                                    }
+                                                }],
+                                                borderColor: "SlateGrey",
+                                                fill: false,
+                                            },
+                                            {
+                                                label: "Guy",
+                                                data: [{
+                                                    {
+                                                        guy_chart
+                                                    }
+                                                }],
+                                                borderColor: "Coral",
+                                                fill: false,
+                                            }
+                                        ],
+                                    },
+                                    options: {
+                                        responsive: true,
+                                        maintainAspectRatio: false,
+                                        scales: {
+                                            xAxes: [{
+                                                type: "time",
+                                                display: true,
+                                                scaleLabel: {
+                                                    display: true,
+                                                    labelString: "Date",
+                                                },
+                                                time: {
+                                                    displayFormats: {
+                                                        minute: "hA",
+                                                    },
+                                                },
+                                            }, ],
+                                            yAxes: [{
+                                                position: "right",
+                                            }, ],
+                                        },
+                                    },
+                                });
+                            </script>
+                        </div>
+
+
+
+                        <h2 class="pb-2 border-bottom">Information</h2>
+                        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                            <div class="col d-flex align-items-start">
+                                <div class="icon-square text-dark flex-shrink-0 me-3">
+                                    <i class="fas fa-cloud-sun fa-3x"></i>
+                                </div>
+                                <div>
+                                    <h2>Temperatures in the House</h2>
+                                    <p class='tempertaure-rooms'><strong>Living Room:</strong> {{ temp_livingr }} °C<br>
+                                        <strong>Yaron:</strong> {{ temp_yaron }} °C<br>
+                                        <strong>Guy:</strong> {{temp_guy}} °C<br>
+                                        <strong>Uriel:</strong> NO INFO YET<br>
+                                        <strong>Parents:</strong> NO INFO YET</p>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-start">
+                                <div class="icon-square text-dark flex-shrink-0 me-3">
+                                    <i class="fas fa-sun fa-3x"></i>
+                                </div>
+                                <div>
+                                    <h2>Hottest Room Award - Not ready yet</h2>
+                                    <p class='tempertaure-rooms'><strong>Yaron's Room</strong> wins the "Hottest Room
+                                        Award" with <strong>31.2 °C</strong>.<br>Congratulations!</p>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-start">
+                                <div class="icon-square text-dark flex-shrink-0 me-3">
+                                    <i class="far fa-snowflake fa-3x"></i>
+                                </div>
+                                <div>
+                                    <h2>Coldest Room Award - Not ready yet</h2>
+                                    <p class='tempertaure-rooms'><strong>Parents Room</strong> wins the "Coldest Room
+                                        Award" with <strong>23.7 °C</strong>.<br>Congratulations!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    <!-- ----------------------------------------------- OUT SIDE ------------------------------------------------------------ -->
+                    <div class="tab-pane fade" id="outside-temperature" role="tabpanel"
+                        aria-labelledby="pills-profile-tab">
+                        <div class='graph'>
+                            <canvas class="my-4 w-100" id="outside-temperatures-graph" width="900"
+                                height="260"></canvas>
+
+                            <script>
+                                var ctx_temps = document
+                                    .getElementById("outside-temperatures-graph")
+                                    .getContext("2d");
+                                var scatterChart1 = new Chart(ctx_temps, {
+                                    type: "line",
+                                    data: {
+                                        datasets: [{
+                                                label: "Temperature",
+                                                data: [{
+                                                    {
+                                                        outside_graph
+                                                    }
+                                                }],
+                                                borderColor: "CadetBlue",
+                                                fill: false,
+                                            },
+                                            {
+                                                label: "Feels Like",
+                                                data: [{
+                                                    {
+                                                        outside_feels_graph
+                                                    }
+                                                }],
+                                                borderColor: "MidnightBlue",
+                                                fill: false,
+                                            },
+                                        ],
+                                    },
+                                    options: {
+                                        responsive: true,
+                                        maintainAspectRatio: false,
+                                        scales: {
+                                            xAxes: [{
+                                                type: "time",
+                                                display: true,
+                                                scaleLabel: {
+                                                    display: true,
+                                                    labelString: "Date",
+                                                },
+                                                time: {
+                                                    displayFormats: {
+                                                        minute: "hA",
+                                                    },
+                                                },
+                                            }, ],
+                                            yAxes: [{
+                                                position: "right",
+                                            }, ],
+                                        },
+                                    },
+                                });
+                            </script>
+                        </div>
+
+                        <h2 class="pb-2 border-bottom">Information</h2>
+                        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                            <div class="col d-flex align-items-start">
+                                <div class="icon-square text-dark flex-shrink-0 me-3">
+                                    <i class="fas fa-cloud-sun fa-3x"></i>
+                                </div>
+                                <div>
+
+                                    <h2>The Weather</h2>
+                                    <p class='tempertaure-rooms'><strong>Temperature:</strong> {{ outside_temp }} °C<br>
+                                        <strong>Feels like:</strong> {{outside_feels_like }} °C<br>
+                                        <strong>Weather description:</strong> {{ outside_descirption }}<br>
+                                        <strong>Humidity:</strong> {{ outside_humidity }}%<br>
+                                        <strong>Dew Point:</strong> {{ outside_dew_point }} °C<br>
+                                        <strong>Wind speed:</strong> {{ outside_wind_speed }} KMH<br>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-start">
+                                <div class="icon-square text-dark flex-shrink-0 me-3">
+                                    <i class="fas fa-sun fa-3x"></i>
+                                </div>
+                                <div>
+                                    <h2>Hottest Moment Award - Not ready yet</h2>
+                                    <p class='tempertaure-rooms'><strong>15:30</strong> wins the "Hottest Moment Award"
+                                        with <strong>31.2 °C</strong>.<br>Felt like
+                                        <strong>35.2°C</strong>!<br>Congratulations!</p>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-start">
+                                <div class="icon-square text-dark flex-shrink-0 me-3">
+                                    <i class="far fa-snowflake fa-3x"></i>
+                                </div>
+                                <div>
+                                    <h2>Coldest Moment Award - Not ready yet</h2>
+                                    <p class='tempertaure-rooms'><strong>23:45</strong> wins the "Coldest Moment Award"
+                                        with <strong>23.7 °C</strong>.<br>Felt like
+                                        <strong>24.2°C</strong>!<br>Congratulations!</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
+
+                    <!--  -------------------------------------------------------- BOILER ---------------------------------------------------------------------- -->
+                    <div class="tab-pane fade" id="boiler-temperature" role="tabpanel"
+                        aria-labelledby="pills-contact-tab">
+                        <div class='graph'>
+                            <canvas class="my-4 w-100" id="boiler-temperatures-graph" width="900" height="260"></canvas>
+                            <script>
+                                var ctx_temps = document
+                                    .getElementById("boiler-temperatures-graph")
+                                    .getContext("2d");
+                                var scatterChart1 = new Chart(ctx_temps, {
+                                    type: "line",
+                                    data: {
+                                        datasets: [{
+                                                label: "Global",
+                                                data: GLOBAL_DATA,
+                                                borderColor: "MediumVioletRed",
+                                                fill: false,
+                                            },
+                                            {
+                                                label: "Inside",
+                                                data: INSIDE_DATA,
+                                                borderColor: "OrangeRed",
+                                                fill: false,
+                                            },
+                                            {
+                                                label: "Top",
+                                                data: TOP_DATA,
+                                                borderColor: "GoldenRod",
+                                                fill: false,
+                                            },
+                                        ],
+                                    },
+                                    options: {
+                                        responsive: true,
+                                        maintainAspectRatio: false,
+                                        scales: {
+                                            xAxes: [{
+                                                type: "time",
+                                                display: true,
+                                                time: {
+                                                    displayFormats: {
+                                                        minute: "HH:mm"
+                                                    },
+                                                },
+                                            }, ],
+                                            yAxes: [{
+                                                position: "right"
+                                            }],
+                                        },
+                                        annotation: {
+                                            annotations: annotations
+                                        },
+                                    },
+                                });
+                            </script>
+                        </div>
+
+
+                        <h2 class="pb-2 border-bottom">Information</h2>
+                        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                            <div class="col d-flex align-items-start">
+                                <div class="icon-square text-dark flex-shrink-0 me-3">
+                                    <i class="fas fa-info-circle fa-3x"></i>
+                                </div>
+                                <div>
+
+                                    <h2>System Information</h2>
+                                    <p class='tempertaure-rooms'><strong>IP:</strong> 10.100.102.50<br>
+                                        <strong>Led is:</strong> On<br>
+                                        <strong>DST:</strong> On<br>
+                                        <strong>Time:</strong> 10.07.2021, Saturday, 20:16<br>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-start">
+                                <div class="icon-square text-dark flex-shrink-0 me-3">
+                                    <i class="fas fa-faucet fa-3x"></i>
+                                </div>
+                                <div>
+                                    <h2>Valve Information</h2>
+                                    <p class='tempertaure-rooms'><strong>Last Opened:</strong> 10.07.2021, Saturday,
+                                        16:07<br>
+                                        <strong>Last Closed:</strong> 10.07.2021, Saturday, 16:32<br>
+                                        <strong>Valve is:</strong> Closed
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-start">
+                                <div class="icon-square text-dark flex-shrink-0 me-3">
+                                    <i class="fas fa-thermometer-three-quarters fa-3x"></i>
+                                </div>
+                                <div>
+                                    <h2>Temperature Information</h2>
+                                    <p class='tempertaure-rooms'>
+                                        <span style="color: red">Temperature 1 (Global): 45 &deg;C, Quality:
+                                            100%</span><br />
+                                        <span style="color: orange">Temperature 2 (Inside): 48 &deg;C, Quality:
+                                            100%</span><br />
+                                        <span style="color: purple">Temperature 3 (Top): 54 &deg;C, Quality:
+                                            100%</span><br />
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+        </div>
+        <script>
+            function do_the_work() {
+                // when refreshes page, hide the other tab so you won't be able to scroll 
+                // into oblivion lmao
+                var y = document.getElementById("outside-temperature")
+                y.style.display = 'none';
+                var z = document.getElementById('boiler-temperature')
+                z.style.display = 'none';
+                // get the element
+                const home_tab = document.getElementById('pills-home-tab')
+                const outside_tab = document.getElementById('pills-outside-tab')
+                const boiler_tab = document.getElementById('pills-boiler-tab')
+
+                // always checking if the element is clicked
+                home_tab.addEventListener("click", () => {
+                    var x = document.getElementById("home-temperature");
+                    x.style.display = "block";
+                    var y = document.getElementById("outside-temperature")
+                    y.style.display = 'none';
+                    var z = document.getElementById('boiler-temperature')
+                    z.style.display = 'none';
+                });
+
+                outside_tab.addEventListener("click", () => {
+                    var x = document.getElementById("home-temperature");
+                    x.style.display = "none";
+                    var y = document.getElementById("outside-temperature")
+                    y.style.display = "block";
+                    var z = document.getElementById('boiler-temperature')
+                    z.style.display = "none";
+                });
+
+                boiler_tab.addEventListener("click", () => {
+                    var x = document.getElementById("home-temperature");
+                    x.style.display = "none";
+                    var y = document.getElementById("outside-temperature")
+                    y.style.display = "none";
+                    var z = document.getElementById('boiler-temperature')
+                    z.style.display = "block";
+                });
+            }
+        </script>
+</body>
+
+</html>
