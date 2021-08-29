@@ -12,7 +12,7 @@ import random
 from bs4 import BeautifulSoup
 import requests
 
-api_key = '2c24dbb46c5b9c9b615a1578321af2e9'
+api_key = 'Your_Key'
 parameters = {
     'lat': 32.292647,
     'lon': 34.849826,
