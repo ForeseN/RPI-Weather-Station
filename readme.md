@@ -9,7 +9,7 @@ anyways, a few weeks after writing the project, I've got myself an AC. Happy end
 
 # How it works?
 Basically, I put an Arduino board with a temperature sensor (DS18B20) in every room in my house.
-I've used MQTT to transfer the weather data to my Raspberry Pi which collected every bit of data and put it in a nice graph made with JavaScript.
+I've used MQTT to transfer the weather data to my Raspberry Pi which collected every bit of data and put it in a nice graph made with JavaScript.\
 In addition, I've used OpenWeatherAPI to get information about the weather outside aswell.
 All the backend made with Flask.
 
@@ -18,6 +18,7 @@ All the backend made with Flask.
 Raspberry Pi - Runs the webserver and gets all the information from the Arduino's.\
 Arduino (Each room + 1) - Sends the temperature data.\
 DS18B20 (Each room + 1) - Temperature sensor.
+
 
 
 
